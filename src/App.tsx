@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import axios from 'axios'
 import './App.css';
 
 // function App() {
@@ -28,6 +29,15 @@ class App extends React.Component {
         }}>🏠</button>
       </div>
      );
+  }
+  componentDidMount(){
+    this.getList();
+  }
+
+  getList(){
+    axios.get('getList').then(res =>{
+      console.log(res)
+    })
   }
 }
 
